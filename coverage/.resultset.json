@@ -1,6 +1,21 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/Ganney/Projects/Portfolio/week4/bookmarks/spec/bookmark_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/Ganney/Projects/Portfolio/week4/bookmarks/spec/features/homepage_welcome_spec.rb": [
         1,
         1,
@@ -20,6 +35,6 @@
         null
       ]
     },
-    "timestamp": 1563204572
+    "timestamp": 1563211938
   }
 }
