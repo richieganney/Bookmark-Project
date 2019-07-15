@@ -26,3 +26,10 @@ nouns
 
 verbs
 - list
+
+# instructions for setting up the database of this project
+
+- Connect to psql (use 'brew install postgresql' if you don't have it already)
+- Create the database using the psql command CREATE DATABASE bookmark_manager;
+- Connect to the database using the pqsl command \c bookmark_manager;
+- Run the query we have saved in the file 01_create_bookmarks_table.sql
