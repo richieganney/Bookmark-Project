@@ -1,11 +1,11 @@
 ENV['RACK_ENV'] = 'test'
-
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require 'capybara'
+require 'rspec'
+require 'features/web_helpers'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-require 'rspec'
-
-require File.join(File.dirname(__FILE__), '..', 'app/controllers/application_controller.rb')
 
 Capybara.app = ApplicationManager
 
