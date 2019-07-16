@@ -6,6 +6,12 @@
       <li><%= bookmark %></li>
     <% end %>
   </ul>
+  <form action="/add-bookmark" method="post">
+    <label for="bookmark">
+    Add New Bookmark
+    <input type="text" name="bookmark">
+    <input type="submit" value="Submit">
+  </form>
   </body>
 </html>
 

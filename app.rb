@@ -9,6 +9,10 @@ class ApplicationManager < Sinatra::Base
     erb(:index)
   end
 
+  post '/add-bookmark' do
+    "Bookmark Saved!"
+  end
+
   run! if app_file == $0
 
 end

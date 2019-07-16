@@ -21,3 +21,16 @@ feature 'Viewing bookmarks' do
     expect(page).to have_content "http://www.google.com"
   end
 end
+
+feature 'Adding bookmarks' do
+  scenario 'has a form to confirm that you`ve added a bookmark' do
+    visit('/')
+    expect(page).to have_content('Add New Bookmark')
+  end
+
+  scenario 'adds a bookmark to a page' do
+    visit('/')
+    click_button('Submit')
+    expect(page).to have_content "Bookmark Saved!"
+  end
+end
