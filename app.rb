@@ -10,7 +10,8 @@ class ApplicationManager < Sinatra::Base
   end
 
   post '/add-bookmark' do
-    "Bookmark Saved!"
+    Bookmark.add(params[:bookmark])
+    redirect '/'
   end
 
   run! if app_file == $0

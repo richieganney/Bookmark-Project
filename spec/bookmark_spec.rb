@@ -1,7 +1,7 @@
 require './models/bookmark'
 
 describe Bookmark do
-  describe '.all' do
+  describe '#.all' do
     it 'returns all bookmarks' do
 
       connection = PG.connect(dbname: 'bookmark_manager_test')
@@ -18,4 +18,12 @@ describe Bookmark do
       expect(bookmarks).to include("http://www.google.com")
     end
   end
+
+  describe '#.add_bookmark' do
+    it 'adds a bookmark to the database' do
+      Bookmark.add('www.github.com')
+      expect(Bookmark.all).to include 'www.github.com'
+    end
+  end
+
 end

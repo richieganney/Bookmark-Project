@@ -30,7 +30,8 @@ feature 'Adding bookmarks' do
 
   scenario 'adds a bookmark to a page' do
     visit('/')
+    fill_in 'bookmark', with: 'https//:www.github.com'
     click_button('Submit')
-    expect(page).to have_content "Bookmark Saved!"
+    expect(page).to have_content 'https//:www.github.com'
   end
 end
