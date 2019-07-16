@@ -3,7 +3,8 @@ require_relative './models/bookmark'
 
 class ApplicationManager < Sinatra::Base
 
-  get '/'  do
+  get '/' do
+    # p ENV
     @bookmarks = Bookmark.all
     erb(:index)
   end

@@ -7,6 +7,14 @@
         1,
         1,
         1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
         1,
         null,
         1,
@@ -16,7 +24,7 @@
         null,
         null
       ],
-      "/Users/Ganney/Projects/Portfolio/week4/bookmarks/spec/features/homepage_welcome_spec.rb": [
+      "/Users/Ganney/Projects/Portfolio/week4/bookmarks/spec/features/viewing_bookmarks_spec.rb": [
         1,
         1,
         1,
@@ -26,6 +34,13 @@
         null,
         1,
         1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
         1,
         null,
         1,
@@ -35,6 +50,6 @@
         null
       ]
     },
-    "timestamp": 1563211938
+    "timestamp": 1563289693
   }
 }
