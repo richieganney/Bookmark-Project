@@ -13,10 +13,10 @@ feature 'Viewing bookmarks' do
     Bookmark.add("http://www.makersacademy.com", "Makers Academy");
     Bookmark.add("http://www.destroyallsoftware.com", "Destroy");
     Bookmark.add("http://www.google.com", "Google");
-    
+
     visit('/')
 
-    expect(page).to have_link('Makers Academy', href: "http://www.makersacademy.com") 
+    expect(page).to have_link('Makers Academy', href: "http://www.makersacademy.com")
     expect(page).to have_link('Destroy', href: "http://www.destroyallsoftware.com")
     expect(page).to have_link('Google', href: "http://www.google.com")
   end
@@ -31,8 +31,9 @@ feature 'Adding bookmarks' do
   scenario 'adds a bookmark to a page' do
     visit('/')
     fill_in 'bookmark', with: 'https//:www.github.com'
+    fill_in 'title', with: 'My Github'
     click_button('Submit')
-    expect(page).to have_content 'https//:www.github.com'
+    expect(page).to have_link("My Github", href: 'https//:www.github.com') 
   end
 
   scenario 'adds a title to the bookmark' do
