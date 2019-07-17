@@ -29,19 +29,21 @@ feature 'Adding bookmarks' do
   end
 
   scenario 'adds a bookmark to a page' do
-    visit('/')
-    fill_in 'bookmark', with: 'https//:www.github.com'
-    fill_in 'title', with: 'My Github'
-    click_button('Submit')
-    expect(page).to have_link("My Github", href: 'https//:www.github.com') 
+    sign_in_and_submit
+    expect(page).to have_link("my github", href: 'https//:www.github.com')
   end
 
   scenario 'adds a title to the bookmark' do
     # ENV['ENVIRONMENT'] = 'test'
-    visit('/')
-    fill_in 'bookmark', with: 'https//:www.github.com'
-    fill_in 'title', with: 'my github'
-    click_button('Submit')
+    sign_in_and_submit
     expect(page).to have_link("my github", href: "https//:www.github.com")
+  end
+end
+
+feature 'Deleting a bookmark' do
+  scenario 'user can a delete a bookmark from database' do
+    sign_in_and_submit
+    click_button("delete_#{Bookmark.all.first.id}")
+    expect(page).not_to have_content 'my github'
   end
 end
