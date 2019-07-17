@@ -43,7 +43,7 @@ end
 feature 'Deleting a bookmark' do
   scenario 'user can a delete a bookmark from database' do
     sign_in_and_submit
-    click_button("delete_#{Bookmark.all.first.id}")
+    click_button("#{Bookmark.all.first.id}")
     expect(page).not_to have_content 'my github'
   end
 end

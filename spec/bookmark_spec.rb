@@ -28,4 +28,11 @@ describe Bookmark do
     end
   end
 
+  describe '#.delete' do
+    it 'deletes a bookmark from the webpage' do
+      bookmark = Bookmark.add('www.github.com', 'My Github')
+      Bookmark.delete(bookmark.id)
+      expect(Bookmark.all).to eq []
+    end
+  end
 end
