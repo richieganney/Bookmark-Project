@@ -3,13 +3,14 @@
     <h1><center>Welcome!</center><h1>
   <ul>
     <% @bookmarks.each do |bookmark| %>
-      <li><%= bookmark %></li>
+      <li><a href=<%=bookmark[0]%>><%= bookmark[1] %></a></li>
     <% end %>
   </ul>
   <form action="/add-bookmark" method="post">
     <label for="bookmark">
     Add New Bookmark
-    <input type="text" name="bookmark">
+    <input type="url" name="bookmark" placeholder="Enter url" required>
+    <input type="text" name="title" placeholder="Enter Title" required>
     <input type="submit" value="Submit">
   </form>
   </body>

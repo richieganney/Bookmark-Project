@@ -10,7 +10,7 @@ class ApplicationManager < Sinatra::Base
   end
 
   post '/add-bookmark' do
-    Bookmark.add(params[:bookmark])
+    Bookmark.add(params[:bookmark], params[:title])
     redirect '/'
   end
 
