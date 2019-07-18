@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './spec/database_connection_setup.rb'
 require_relative './models/bookmark'
 
 class ApplicationManager < Sinatra::Base
