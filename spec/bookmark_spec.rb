@@ -35,4 +35,12 @@ describe Bookmark do
       expect(Bookmark.all).to eq []
     end
   end
+
+  describe '#.update' do
+    it 'updates the title of a bookmark' do
+      bookmark = Bookmark.add('https://www.github.com', 'My Github')
+      Bookmark.update('GITHUB', bookmark.title)
+      expect(Bookmark.all.first.title).to eq 'GITHUB'
+    end
+  end
 end

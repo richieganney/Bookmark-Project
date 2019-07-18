@@ -47,3 +47,12 @@ feature 'Deleting a bookmark' do
     expect(page).not_to have_content 'my github'
   end
 end
+
+feature 'updating a bookmark' do
+  scenario 'user can update a bookmark in the database' do
+    sign_in_and_submit
+    fill_in 'update_bookmark', with: 'GITHUB'
+    click_button("#{Bookmark.all.first.title}")
+    expect(page).to have_content 'GITHUB'
+  end
+end

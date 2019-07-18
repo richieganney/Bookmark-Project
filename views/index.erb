@@ -7,6 +7,10 @@
         <form class="" action="/delete-bookmarks" method="post">
           <input type="submit" name="<%= bookmark.id %>" value="Delete">
         </form>
+        <form action="/update-bookmark" method="post">
+          <input type="text" name="update_bookmark" placeholder="update bookmark?">
+          <input type="submit" name="<%= bookmark.title %>" value="Update">
+        </form>
       </li>
     <% end %>
   </ul>

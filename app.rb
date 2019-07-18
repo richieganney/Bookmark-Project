@@ -19,6 +19,11 @@ class ApplicationManager < Sinatra::Base
     redirect '/'
   end
 
+  post '/update-bookmark' do
+    Bookmark.update(params[:update_bookmark], params.key("Update"))
+    redirect '/'
+  end
+
   run! if app_file == $0
 
 end
