@@ -17,7 +17,15 @@
         <form action="/update-bookmark" method="post">
           <input type="text" name="update_bookmark" placeholder="update bookmark?">
           <input type="submit" name="<%= bookmark.title %>" value="Update">
-        </form>
+        </form><br>
+        <ul>
+          <% @comments.each do |comment| %>
+          <form action="/comment" method="post">
+            <input type="text" name="comment" placeholder="comment">
+            <input type="submit" name="<%= comment.id %>" value="Comment">
+            <% end %>
+          </form>
+        </ul>
       </li>
     <% end %>
   </ul>
@@ -25,3 +33,4 @@
 </html>
 
 <%= flash[:notice] %>
+

@@ -3,6 +3,7 @@ require 'sinatra/flash'
 require 'uri'
 require_relative './spec/database_connection_setup.rb'
 require_relative './models/bookmark'
+require_relative './models/comment'
 
 class ApplicationManager < Sinatra::Base
 
@@ -12,6 +13,7 @@ class ApplicationManager < Sinatra::Base
   get '/' do
     # p ENV
     @bookmarks = Bookmark.all
+    @comments = Comment.all
     erb(:index)
   end
 
@@ -28,6 +30,9 @@ class ApplicationManager < Sinatra::Base
   post '/update-bookmark' do
     Bookmark.update(params[:update_bookmark], params.key("Update"))
     redirect '/'
+  end
+
+  post '/comment' do
   end
 
   run! if app_file == $0

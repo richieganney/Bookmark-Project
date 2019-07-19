@@ -61,3 +61,14 @@ feature 'updating a bookmark' do
     expect(page).to have_content 'GITHUB'
   end
 end
+
+feature 'allows a user to comment on a bookmark' do
+  scenario 'comment on a bookmark' do
+    bookmark = Bookmark.add("http://www.makersacademy.com", "Makers Academy")
+    sign_in_and_submit
+    fill_in 'comment', with: 'i love github'
+    click_button('Comment')
+    expect(page).to have_content 'i love github'
+  end
+end
+

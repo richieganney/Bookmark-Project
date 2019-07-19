@@ -49,6 +49,22 @@
         null,
         null
       ],
+      "/Users/Ganney/Projects/Portfolio/week4/Bookmark-Project/spec/comments_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/Ganney/Projects/Portfolio/week4/Bookmark-Project/spec/database_connection_spec.rb": [
         1,
         1,
@@ -139,9 +155,20 @@
         1,
         1,
         null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        null,
+        null,
         null
       ]
     },
-    "timestamp": 1563547186
+    "timestamp": 1563554904
   }
 }
