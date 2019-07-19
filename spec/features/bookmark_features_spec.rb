@@ -23,6 +23,16 @@ feature 'Viewing bookmarks' do
 end
 
 feature 'Adding bookmarks' do
+
+  scenario 'validating a url' do
+    visit('/')
+    fill_in 'bookmark', with: 'bookmark'
+    fill_in 'title', with: 'title'
+    click_button('Submit')
+    expect(page).to_not have_content 'title'
+    expect(page).to have_content 'Please enter a valid url'
+  end
+
   scenario 'has a form to confirm that you`ve added a bookmark' do
     visit('/')
     expect(page).to have_content('Add New Bookmark')
@@ -30,14 +40,9 @@ feature 'Adding bookmarks' do
 
   scenario 'adds a bookmark to a page' do
     sign_in_and_submit
-    expect(page).to have_link("my github", href: 'https//:www.github.com')
+    expect(page).to have_link("my github", href: 'https://www.github.com')
   end
 
-  scenario 'adds a title to the bookmark' do
-    # ENV['ENVIRONMENT'] = 'test'
-    sign_in_and_submit
-    expect(page).to have_link("my github", href: "https//:www.github.com")
-  end
 end
 
 feature 'Deleting a bookmark' do

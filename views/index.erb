@@ -1,6 +1,13 @@
 <html>
   <body style="background-color:rgb(66, 190, 194)">
     <h1><center>Welcome!</center><h1>
+        <form action="/add-bookmark" method="post">
+        <label for="bookmark">
+        Add New Bookmark
+        <input type="text" name="bookmark" placeholder="Enter url" required>
+        <input type="text" name="title" placeholder="Enter Title" required>
+        <input type="submit" value="Submit">
+      </form>
   <ul>
     <% @bookmarks.each do |bookmark| %>
       <li><a href=<%=bookmark.url%>><%= bookmark.title %></a>
@@ -14,12 +21,7 @@
       </li>
     <% end %>
   </ul>
-  <form action="/add-bookmark" method="post">
-    <label for="bookmark">
-    Add New Bookmark
-    <input type="url" name="bookmark" placeholder="Enter url" required>
-    <input type="text" name="title" placeholder="Enter Title" required>
-    <input type="submit" value="Submit">
-  </form>
   </body>
 </html>
+
+<%= flash[:notice] %>

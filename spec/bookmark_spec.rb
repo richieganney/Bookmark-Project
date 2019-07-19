@@ -24,13 +24,13 @@ describe Bookmark do
 
   describe '#.add' do
     it 'adds a bookmark to the database' do
-      expect(Bookmark.add('www.github.com', 'My Github')).to be_a Bookmark
+      expect(Bookmark.add('https://www.github.com', 'My Github')).to be_a Bookmark
     end
   end
 
   describe '#.delete' do
     it 'deletes a bookmark from the webpage' do
-      bookmark = Bookmark.add('www.github.com', 'My Github')
+      bookmark = Bookmark.add('https://www.github.com', 'My Github')
       Bookmark.delete(bookmark.id)
       expect(Bookmark.all).to eq []
     end

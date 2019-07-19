@@ -1,8 +1,13 @@
 require 'sinatra/base'
+require 'sinatra/flash'
+require 'uri'
 require_relative './spec/database_connection_setup.rb'
 require_relative './models/bookmark'
 
 class ApplicationManager < Sinatra::Base
+
+  enable :sessions
+  register Sinatra::Flash 
 
   get '/' do
     # p ENV
@@ -11,7 +16,7 @@ class ApplicationManager < Sinatra::Base
   end
 
   post '/add-bookmark' do
-    Bookmark.add(params[:bookmark], params[:title])
+    flash[:notice] = 'Please enter a valid url' unless Bookmark.add(params[:bookmark], params[:title])
     redirect '/'
   end
 
